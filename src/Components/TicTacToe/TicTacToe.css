@@ -1,1 +1,93 @@
 /* Import this file into TicTacToe.jsx */
+/* 
+- add styling rules to the container classname
+- add styling rules to the title classname
+- add styling rules to the span tag in title in TicTacToe.jsx
+- add styling rules to the "Reset" button with classname "reset" in TicTacToe.jsx
+- Go to TicTacToe.jsx for Next Steps...
+*/
+
+/* Target: container classname */
+.container{
+  text-align: center;
+}
+
+/* Target: title classname */
+.title{
+  margin-top: 50px;
+  color: white;
+  font-size: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Target: title classname => span tag */
+.title span{
+  color: #26ffcb;
+  padding-left: 15px;
+}
+
+/* Target: reset classname (button with classname "reset") */
+.reset{
+  width: 250px;
+  height: 100px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50px;
+  background: #1f3540;
+  font-size: 26px;
+  color: #26ffcb;
+  margin-top: 25px;
+  margin-bottom: 50px;
+}
+
+/* Return HERE from TicTacToe.jsx AFTER creating and renaming row1-row3 */
+/*
+- add styling rules to the boxes classname
+- add styling rules to the board classname
+- Go to TicTacToe.jsx for Next Steps...
+*/
+
+/* Target: boxes classname */
+ .boxes{
+  display: flex;
+  height: 180px;
+  width: 180px;
+  background: #1f3540;
+  border: 4px solid #0f1b21;
+  border-radius: 12px;
+  cursor: pointer;
+ }
+
+ /* Target: board classname */
+ .board{
+  height: 600px;
+  width: 564px;
+  display: flex;
+  margin: auto;
+ }
+
+ /* Return HERE from TicTacToe.jsx AFTER adding toggle fro X to O to the boxes */
+ /* 
+ - add styling rules to the boxes classname => img tag (.boxes img)
+ - the above styling rules (for the img tag on the boxes classname) make the X and O images smaller
+ - Go to TicTacToe.jsx for Next Steps...
+ */
+
+ /* Target: boxes classname => img tag */
+ .boxes img{
+    margin: 50px 50px;
+ }
+
+ /* Return HERE only AFTER adding a winner display in TicTacToe.jsx */
+ /* 
+ - add styling rules to the title classname => img tag (.boxes img)
+ - Go to TicTacToe.jsx for Next Steps...
+ */
+ /* Target: title classname => img tag */
+ .title img{
+    padding: 20px 20px;
+    height: 50px;
+ }
