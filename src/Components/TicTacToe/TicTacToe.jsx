@@ -48,6 +48,17 @@ const TicTacToe = () => {
  let [count, setCount] = useState(0);
  let [lock, setLock] = useState(false);
  let titleRef = useRef(null);
+ let box1 = useRef(null);
+ let box2 = useRef(null);
+ let box3 = useRef(null);
+ let box4 = useRef(null);
+ let box5 = useRef(null);
+ let box6 = useRef(null);
+ let box7 = useRef(null);
+ let box8 = useRef(null);
+ let box9 = useRef(null);
+
+ let box_array = [box1, box2, box3, box4, box5, box6, box7, box8, box9];
 
  //Functions
  //Toggle function
@@ -97,7 +108,14 @@ const TicTacToe = () => {
 //FUNCTIONALITY CHECKPOINT: Make sure your program's title resets to TicTacToe In React when the "Reset" button is clicked. The Xs and Os should not yet erase at this point.
 
 //After Functionality Check Point:
-
+//In the Hooks section of this page, add a reference to each of the 9 boxes on the board
+//let box1 =  useRef(null) <= initialize them as empty (null)
+//next, below all of the box references, store them in a new array called box_array, and add all the box references to the array
+//attach the box references to the divs with classname of boxes (with ref={box1}...etc.)
+//then, in the reset arrow function, parse the box_array using the .map method (box_array.map((e)=>{}))
+//inside of the arrow function that is nested within the box_array.map... change e.current.innerHTML = ""; (to reset the values of the boxes to an empty string)
+//FUNCTIONALITY CHECKPOINT: When pressing "Reset" button, title should return to original title and box content should clear. If this is true for your app...
+//Project Is Complete!
 
   const checkWin = () => {
     //IF Top LEFT Square = Top MIDDLE Square = Top RIGHT Square 
@@ -150,6 +168,9 @@ const TicTacToe = () => {
     data = ["", "" , "", "", "", "", "", "", ""];
     //Updating our title from Congrats Winner to:
     titleRef.current.innerHTML = `Tic Tac Toe Game In <span>React</span>`;
+    box_array.map((e)=>{
+      e.current.innerHTML = "";
+    })
   }
 
   return (
@@ -157,19 +178,19 @@ const TicTacToe = () => {
       <h1 className="title" ref={titleRef}>Tic Tac Toe Game In <span>React</span></h1>
       <div className="board">
         <div className="row1">
-          <div className="boxes" onClick={(e) => {toggle(e,0)}}></div>
-          <div className="boxes" onClick={(e) => {toggle(e,1)}}></div>
-          <div className="boxes" onClick={(e) => {toggle(e,2)}}></div>
+          <div className="boxes" ref={box1} onClick={(e) => {toggle(e,0)}}></div>
+          <div className="boxes" ref={box2} onClick={(e) => {toggle(e,1)}}></div>
+          <div className="boxes" ref={box3} onClick={(e) => {toggle(e,2)}}></div>
         </div>
         <div className="row2">
-          <div className="boxes" onClick={(e) => {toggle(e,3)}}></div>
-          <div className="boxes" onClick={(e) => {toggle(e,4)}}></div>
-          <div className="boxes" onClick={(e) => {toggle(e,5)}}></div>
+          <div className="boxes" ref={box4} onClick={(e) => {toggle(e,3)}}></div>
+          <div className="boxes" ref={box5} onClick={(e) => {toggle(e,4)}}></div>
+          <div className="boxes" ref={box6} onClick={(e) => {toggle(e,5)}}></div>
         </div>
         <div className="row3">
-          <div className="boxes" onClick={(e) => {toggle(e,6)}}></div>
-          <div className="boxes" onClick={(e) => {toggle(e,7)}}></div>
-          <div className="boxes" onClick={(e) => {toggle(e,8)}}></div>
+          <div className="boxes" ref={box7} onClick={(e) => {toggle(e,6)}}></div>
+          <div className="boxes" ref={box8} onClick={(e) => {toggle(e,7)}}></div>
+          <div className="boxes" ref={box9} onClick={(e) => {toggle(e,8)}}></div>
         </div>
       </div>
       <button className="reset" onClick={() => {reset()}}>Reset</button>
